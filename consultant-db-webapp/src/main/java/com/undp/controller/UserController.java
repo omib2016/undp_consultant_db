@@ -40,14 +40,14 @@ public class UserController
     @RequestMapping("/home")
     public String getHomePage()
     {
-        return "UNDP Home page.";
+        return "UNICMS Home page.";
     }
 
     @RequestMapping("/getStatus")
     public String getStatus()
     {
         if (adminService.getSystemStatus() == 1)
-            return "UNDP Database is up & running!";
+            return "UNICMS is up & running!";
         else
             return "Error initializing database. Please check application logs..";
 
