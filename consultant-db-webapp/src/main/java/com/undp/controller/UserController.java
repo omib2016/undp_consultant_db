@@ -1,7 +1,9 @@
 package com.undp.controller;
 
 import com.undp.entity.User;
+import com.undp.service.AdminService;
 import com.undp.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,10 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController
 {
     private final UserService userService;
+    private final AdminService adminService;
 
-    public UserController(UserService userService)
+    @Autowired
+    public UserController(UserService userService, AdminService adminService)
     {
         this.userService = userService;
+        this.adminService = adminService;
     }
 
     @RequestMapping("/getUser")
@@ -31,11 +36,21 @@ public class UserController
         userService.saveUser(user);
     }
 
+    //TODO: Move this function to its own controller.
+    @RequestMapping("/home")
+    public String getHomePage()
+    {
+        return "UNDP Home page.";
+    }
 
     @RequestMapping("/getStatus")
     public String getStatus()
     {
-        return "UNDP Consultant database is running..";
+        if (adminService.getSystemStatus() == 1)
+            return "UNDP Database is up & running!";
+        else
+            return "Error initializing database. Please check application logs..";
+
     }
 
 }

@@ -1,11 +1,18 @@
 package com.undp.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Created by omib on 04/09/2016.
  */
+@Entity
 public class User
 {
+    @Id
     private final String userId;
+    @Column
     private final String userName;
 
     public User(String userId, String userName)
