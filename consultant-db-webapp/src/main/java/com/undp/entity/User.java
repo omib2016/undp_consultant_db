@@ -1,58 +1,54 @@
 package com.undp.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import com.undp.jpa.UserContactDetails;
+import com.undp.jpa.UserLogon;
+import com.undp.jpa.UserPersonalDetails;
+import com.undp.jpa.UserProfessionalDetails;
 
 /**
- * Created by omib on 04/09/2016.
+ * Created by omib on 20/09/2016.
  */
-@Entity
 public class User
 {
-    @Id
-    private final String userId;
-    @Column
-    private final String userName;
+    private final UserLogon userLogon;
+    private final UserPersonalDetails userPersonalDetails;
+    private final UserProfessionalDetails userProfessionalDetails;
+    private final UserContactDetails userContactDetails;
 
-    public User(String userId, String userName)
+
+    public User(UserLogon userLogon, UserPersonalDetails userPersonalDetails, UserProfessionalDetails userProfessionalDetails,
+                UserContactDetails userContactDetails)
     {
-        this.userId = userId;
-        this.userName = userName;
+        this.userLogon = userLogon;
+        this.userPersonalDetails = userPersonalDetails;
+        this.userProfessionalDetails = userProfessionalDetails;
+        this.userContactDetails = userContactDetails;
     }
 
-    public String getUserId() {
-        return userId;
+
+    public UserLogon getUserLogon() {
+        return userLogon;
     }
 
-    public String getUserName() {
-        return userName;
+    public UserPersonalDetails getUserPersonalDetails() {
+        return userPersonalDetails;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        if (!userId.equals(user.userId)) return false;
-        return userName.equals(user.userName);
-
+    public UserProfessionalDetails getUserProfessionalDetails() {
+        return userProfessionalDetails;
     }
 
-    @Override
-    public int hashCode() {
-        int result = userId.hashCode();
-        result = 31 * result + userName.hashCode();
-        return result;
+    public UserContactDetails getUserContactDetails() {
+        return userContactDetails;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "userId='" + userId + '\'' +
-                ", userName='" + userName + '\'' +
+                "userLogon=" + userLogon +
+                ", userPersonalDetails=" + userPersonalDetails +
+                ", userProfessionalDetails=" + userProfessionalDetails +
+                ", userContactDetails=" + userContactDetails +
                 '}';
     }
 }

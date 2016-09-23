@@ -1,4 +1,4 @@
-package com.undp.service;
+package com.undp.dao;
 
 import com.undp.entity.UserEntry;
 import com.undp.jpa.UserContactDetails;
@@ -9,39 +9,27 @@ import com.undp.repository.UserContactRepository;
 import com.undp.repository.UserLogonRepository;
 import com.undp.repository.UserPersonalDetailRepository;
 import com.undp.repository.UserProfessionalDetailRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Created by omib on 05/09/2016.
+ * Created by omib on 22/09/2016.
  */
-@Service
-public class UserServiceImpl implements UserService
+public class UserDaoImpl implements UserDao
 {
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
     private final UserLogonRepository userLogonRepository;
     private final UserContactRepository userContactRepository;
     private final UserPersonalDetailRepository userPersonalDetailRepository;
     private final UserProfessionalDetailRepository userProfessionalDetailRepository;
 
-    @Autowired
-    public UserServiceImpl(UserLogonRepository userRepository, UserContactRepository userContactRepository, UserPersonalDetailRepository userPersonalDetailRepository, UserProfessionalDetailRepository userProfessionalDetailRepository)
+    public UserDaoImpl(UserLogonRepository userLogonRepository, UserContactRepository userContactRepository,
+                       UserPersonalDetailRepository userPersonalDetailRepository, UserProfessionalDetailRepository userProfessionalDetailRepository)
     {
-        this.userLogonRepository = userRepository;
+        this.userLogonRepository = userLogonRepository;
         this.userContactRepository = userContactRepository;
         this.userPersonalDetailRepository = userPersonalDetailRepository;
         this.userProfessionalDetailRepository = userProfessionalDetailRepository;
     }
 
-
-    @Override
-    public UserLogon getUserByName(String name)
-    {
-        return userLogonRepository.findByUserName(name);
-    }
 
     @Override
     @Transactional
@@ -60,7 +48,6 @@ public class UserServiceImpl implements UserService
 
         //TODO: check save ALL & then return true.
         return true;
+
     }
-
-
 }

@@ -1,9 +1,12 @@
 package com.undp.controller;
 
-import com.undp.entity.User;
+import com.undp.entity.UserEntry;
+import com.undp.jpa.UserLogon;
 import com.undp.service.AdminService;
 import com.undp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,15 +28,16 @@ public class UserController
     }
 
     @GetMapping("/getUser")
-    public User getUser(@RequestParam(value="name") String name)
+    public UserLogon getUser(@RequestParam(value="name") String name)
     {
         return userService.getUserByName(name);
     }
 
     @PostMapping("/saveUser")
-    public void saveUser(User user)
+    public ResponseEntity<Boolean> saveUser(@RequestBody UserEntry userEntry)
     {
-        userService.saveUser(user);
+        boolean response = userService.saveUser(userEntry);
+        return new ResponseEntity<Boolean>(response, HttpStatus.OK);
     }
 
     //TODO: Move this function to its own controller.

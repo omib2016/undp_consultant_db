@@ -1,16 +1,14 @@
 package com.undp.repository;
 
-import com.undp.entity.User;
+import com.undp.jpa.UserLogon;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 /**
  * Created by omib on 05/09/2016.
  */
 @Repository
-public interface UserRepository extends CrudRepository<User,Long>
+public interface UserLogonRepository extends CrudRepository<UserLogon,Long>
 {
-    public User findByUserName(String userName);
+    public UserLogon findByUserName(String userName);
 }
