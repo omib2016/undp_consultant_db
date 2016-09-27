@@ -1,5 +1,6 @@
 package com.undp.service;
 
+import com.undp.entity.User;
 import com.undp.entity.UserEntry;
 import com.undp.jpa.UserContactDetails;
 import com.undp.jpa.UserLogon;
@@ -38,9 +39,15 @@ public class UserServiceImpl implements UserService
 
 
     @Override
-    public UserLogon getUserByName(String name)
+    public User getUserByName(String name)
     {
-        return userLogonRepository.findByUserName(name);
+        UserLogon userLogon = userLogonRepository.findByuserName(name);
+        UserContactDetails userContact = userContactRepository.findByUserId(userLogon.getUserId());
+        UserPersonalDetails userPersonalDetails = userPersonalDetailRepository.findByUserId(userLogon.getUserId());
+        UserProfessionalDetails userProfessionalDetails = userProfessionalDetailRepository.findByUserId(userLogon.getUserId());
+
+        return new User(userLogon,userPersonalDetails,userProfessionalDetails,userContact);
+
     }
 
     @Override

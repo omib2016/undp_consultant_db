@@ -1,5 +1,6 @@
 package com.undp.controller;
 
+import com.undp.entity.User;
 import com.undp.entity.UserEntry;
 import com.undp.jpa.UserLogon;
 import com.undp.service.AdminService;
@@ -28,9 +29,10 @@ public class UserController
     }
 
     @GetMapping("/getUser")
-    public UserLogon getUser(@RequestParam(value="name") String name)
+    public ResponseEntity<User> getUser(@RequestParam(value="name") String name)
     {
-        return userService.getUserByName(name);
+        User user = userService.getUserByName(name);
+        return new ResponseEntity<User>(user,HttpStatus.OK);
     }
 
     @PostMapping("/saveUser")

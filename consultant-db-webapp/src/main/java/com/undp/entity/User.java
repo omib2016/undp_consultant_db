@@ -10,10 +10,17 @@ import com.undp.jpa.UserProfessionalDetails;
  */
 public class User
 {
-    private final UserLogon userLogon;
-    private final UserPersonalDetails userPersonalDetails;
-    private final UserProfessionalDetails userProfessionalDetails;
-    private final UserContactDetails userContactDetails;
+    private UserLogon userLogon;
+    private UserPersonalDetails userPersonalDetails;
+    private UserProfessionalDetails userProfessionalDetails;
+    private UserContactDetails userContactDetails;
+
+
+    //used by HTTPMessage converters. Not to be used.
+    protected User()
+    {
+
+    }
 
 
     public User(UserLogon userLogon, UserPersonalDetails userPersonalDetails, UserProfessionalDetails userProfessionalDetails,

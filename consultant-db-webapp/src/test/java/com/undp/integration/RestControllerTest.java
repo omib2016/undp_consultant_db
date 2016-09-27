@@ -1,9 +1,6 @@
 package com.undp.integration;
 
-import com.undp.entity.Category;
-import com.undp.entity.SubCategory;
-import com.undp.entity.UserCountry;
-import com.undp.entity.UserEntry;
+import com.undp.entity.*;
 import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,13 +15,16 @@ import static com.undp.entity.UserEntry.*;
 
 public class RestControllerTest
 {
+
+    private final RestTemplate restTemplate = new RestTemplate();
+
     @Test
     public void testSavingUser()
     {
         String url = "http://localhost:8080/saveUser";
 
         UserEntry.UserEntryBuilder userEntry = new UserEntry.UserEntryBuilder();
-        userEntry.buildWithUserId("smithj");
+        userEntry.buildWithUserName("smithj");
         userEntry.buildWithPassword("password");
         userEntry.buildWithFirstName("John");
         userEntry.buildWithLastName("Smith");
@@ -39,10 +39,22 @@ public class RestControllerTest
         userEntry.buildWithCategoryName(Category.TEST);
         userEntry.buildWithSubCategory(SubCategory.TEST);
 
-
-        RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Boolean> responseEntity = restTemplate.postForEntity(url, userEntry.build(), Boolean.class);
         Assert.assertEquals(true,responseEntity.getBody().booleanValue());
+
+    }
+
+    @Test
+    public void testGetUser()
+    {
+        String name="smithj";
+        String url = "http://localhost:8080/getUser?name="+name;
+
+        ResponseEntity<User> responseEntity = restTemplate.getForEntity(url, User.class);
+        User user = responseEntity.getBody();
+        Assert.assertNotNull(user);
+        Assert.assertEquals("smithj",user.getUserLogon().getUserName());
+
 
     }
 

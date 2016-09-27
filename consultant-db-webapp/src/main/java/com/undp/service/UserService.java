@@ -1,5 +1,6 @@
 package com.undp.service;
 
+import com.undp.entity.User;
 import com.undp.entity.UserEntry;
 import com.undp.jpa.UserLogon;
 
@@ -8,6 +9,6 @@ import com.undp.jpa.UserLogon;
  */
 public interface UserService
 {
-    public UserLogon getUserByName(String name);
+    public User getUserByName(String name);
     public boolean saveUser(UserEntry userEntry);
 }
