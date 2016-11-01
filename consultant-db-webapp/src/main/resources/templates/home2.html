@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>UNICMS Home page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/static/main.css}"/>
+    <link rel="stylesheet" th:href="@{/static/temp.css}"/>
+    <style>
+        .tt-query, /* UPDATE: newer versions use tt-input instead of tt-query */
+        .tt-hint {
+        width: 396px;
+        height: 30px;
+        padding: 8px 12px;
+        line-height: 30px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        }
+
+        .tt-query { /* UPDATE: newer versions use tt-input instead of tt-query */
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        }
+
+        .tt-hint {
+        color: #999;
+        }
+
+        .tt-menu { /* UPDATE: newer versions use tt-menu instead of tt-dropdown-menu */
+        width: 422px;
+        margin-top: 12px;
+        padding: 8px 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        }
+
+        .tt-suggestion {
+        padding: 3px 20px;
+        line-height: 24px;
+        }
+
+        .tt-suggestion.tt-is-under-cursor { /* UPDATE: newer versions use .tt-suggestion.tt-cursor */
+        color: #fff;
+        background-color: #0097cf;
+
+        }
+
+        .tt-suggestion p {
+        margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h2>Welcome to the United Nations Individual Consultants Management System</h2>
+        <br>As the United Nations’ development network, UNDP connects countries to global knowledge, experience and resources and assists them in strengthening capacity to create their own solutions to development challenges. Visit <a href="http://open.undp.org">open.undp.org</a> to view detailed information on the UNDP’s 6,000+ development projects in 177 countries and territories worldwide.</br>
+
+        <br>UNICMS is an online database driven website that will capture detailed information relating to individual consultants who wish to interact with United Nations agencies in a professional capacity. This website will allow consultants to create, modify and manage their business profiles, as well as allow them to apply for contracts/projects being offered by UN agencies. Consultants will have access to their detailed profile, and may see general public information on all other Consultants.</br>
+
+        <h4>Please review the links below to learn more</h4>
+        <p>
+            <!-- <a class="btn btn-primary" href="#" role="button">About UNICMS</a> -->
+            <a class="btn btn-primary" href="#" role="button">Doing Business with the UN</a>
+            <a class="btn btn-primary" href="https://etendering.partneragencies.org/" role="button">e-Tendering</a>
+            <a class="btn btn-primary" href="https://www.jm.undp.org/" role="button">UNDP in Jamaica</a>
+        </p>
+    </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="navbar-header">
+            <p class="navbar-brand footer"><small>&copy; UNDP in Jamica</small></p>
+        </div>
+
+    </div>
+</nav>
+</body>
+</html>

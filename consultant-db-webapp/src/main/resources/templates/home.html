@@ -1,81 +1,234 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
 <head>
-    <title>UNICMS Home page</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" th:href="@{/static/main.css}"/>
-    <link rel="stylesheet" th:href="@{/static/temp.css}"/>
-    <style>
-        .tt-query, /* UPDATE: newer versions use tt-input instead of tt-query */
-        .tt-hint {
-        width: 396px;
-        height: 30px;
-        padding: 8px 12px;
-        line-height: 30px;
-        border: 2px solid #ccc;
-        border-radius: 8px;
-        outline: none;
-        }
+	<meta charset="utf-8" />
+	<title>UNDP - Multipurpose + Admin</title>
+	<meta name="keywords" content="HTML5,CSS3,Template" />
+	<meta name="description" content="" />
+	<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
-        .tt-query { /* UPDATE: newer versions use tt-input instead of tt-query */
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-        }
+	<!-- mobile settings -->
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
-        .tt-hint {
-        color: #999;
-        }
+	<!-- WEB FONTS : use %7C instead of | (pipe) -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 
-        .tt-menu { /* UPDATE: newer versions use tt-menu instead of tt-dropdown-menu */
-        width: 422px;
-        margin-top: 12px;
-        padding: 8px 0;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        border-radius: 8px;
-        box-shadow: 0 5px 10px rgba(0,0,0,.2);
-        }
+	<!-- CORE CSS -->
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-        .tt-suggestion {
-        padding: 3px 20px;
-        line-height: 24px;
-        }
+	<!-- THEME CSS -->
+	<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+	<link id="css_dark_skin" href="assets/css/layout-dark.css" rel="stylesheet" type="text/css" title="dark" />
 
-        .tt-suggestion.tt-is-under-cursor { /* UPDATE: newer versions use .tt-suggestion.tt-cursor */
-        color: #fff;
-        background-color: #0097cf;
+	<!-- PAGE LEVEL SCRIPTS -->
+	<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/layout-shop.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
-        }
-
-        .tt-suggestion p {
-        margin: 0;
-        }
-    </style>
+	<!-- SWIPER SLIDER -->
+	<link href="assets/plugins/slider.swiper/dist/css/swiper.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-<div class="container">
-    <div class="jumbotron">
-        <h2>Welcome to the United Nations Individual Consultants Management System</h2>
-        <br>As the United Nations’ development network, UNDP connects countries to global knowledge, experience and resources and assists them in strengthening capacity to create their own solutions to development challenges. Visit <a href="http://open.undp.org">open.undp.org</a> to view detailed information on the UNDP’s 6,000+ development projects in 177 countries and territories worldwide.</br>
 
-        <br>UNICMS is an online database driven website that will capture detailed information relating to individual consultants who wish to interact with United Nations agencies in a professional capacity. This website will allow consultants to create, modify and manage their business profiles, as well as allow them to apply for contracts/projects being offered by UN agencies. Consultants will have access to their detailed profile, and may see general public information on all other Consultants.</br>
+<!--
+    AVAILABLE BODY CLASSES:
 
-        <h4>Please review the links below to learn more</h4>
-        <p>
-            <!-- <a class="btn btn-primary" href="#" role="button">About UNICMS</a> -->
-            <a class="btn btn-primary" href="#" role="button">Doing Business with the UN</a>
-            <a class="btn btn-primary" href="https://etendering.partneragencies.org/" role="button">e-Tendering</a>
-            <a class="btn btn-primary" href="https://www.jm.undp.org/" role="button">UNDP in Jamaica</a>
-        </p>
-    </div>
+    smoothscroll 			= create a browser smooth scroll
+    enable-animation		= enable WOW animations
+
+    bg-grey					= grey background
+    grain-grey				= grey grain background
+    grain-blue				= blue grain background
+    grain-green				= green grain background
+    grain-blue				= blue grain background
+    grain-orange			= orange grain background
+    grain-yellow			= yellow grain background
+
+    boxed 					= boxed layout
+    pattern1 ... patern11	= pattern background
+    menu-vertical-hide		= hidden, open on click
+
+    BACKGROUND IMAGE [together with .boxed class]
+    data-background="assets/images/boxed_background/1.jpg"
+-->
+<body class="boxed pattern10" pattern="assets/images/patterns/pattern10.png" >
+
+
+<!-- SLIDE TOP -->
+<div id="slidetop">
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-4">
+				<h6><i class="icon-heart"></i> Who we are?</h6>
+				<p>Some United Nations Development Programme details here..</p>
+			</div>
+
+			<div class="col-md-4">
+				<h6><i class="icon-envelope"></i> CONTACT INFO</h6>
+				<ul class="list-unstyled">
+					<li><b>Address:</b> PO Box 21132, Here Weare St, <br /> Melbourne, Vivas 2355 Australia</li>
+					<li><b>Phone:</b> 1-800-565-2390</li>
+					<li><b>Email:</b> <a href="mailto:support@yourname.com">support@yourname.com</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+	</div>
+
+	<a class="slidetop-toggle" href="#"><!-- toggle button --></a>
+
 </div>
-<nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
-        <div class="navbar-header">
-            <p class="navbar-brand footer"><small>&copy; UNDP in Jamica</small></p>
-        </div>
+<!-- /SLIDE TOP -->
 
-    </div>
-</nav>
+
+<!-- wrapper -->
+<div id="wrapper">
+
+	<!-- Top Bar -->
+	<div id="topBar" class="dark">
+		<div class="container">
+
+			<!-- right -->
+			<ul class="top-links list-inline pull-right">
+				<li class="hidden-xs"><a href="/login">LOGIN</a></li>
+				<li class="hidden-xs"><a href="/register">REGISTER</a></li>
+			</ul>
+
+			<!-- left -->
+			<ul class="top-links list-inline">
+				<li class="hidden-xs"><a href="page-faq-1.html">UNICMS</a></li>
+				<li>
+					<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><img class="flag-lang" src="assets/images/flags/us.png" width="16" height="11" alt="lang" /> ENGLISH</a>
+					<ul class="dropdown-langs dropdown-menu">
+						<li><a tabindex="-1" href="#"><img class="flag-lang" src="assets/images/flags/us.png" width="16" height="11" alt="lang" /> ENGLISH</a></li>
+						<li class="divider"></li>
+						<li><a tabindex="-1" href="#"><img class="flag-lang" src="assets/images/flags/de.png" width="16" height="11" alt="lang" /> GERMAN</a></li>
+						<li><a tabindex="-1" href="#"><img class="flag-lang" src="assets/images/flags/ru.png" width="16" height="11" alt="lang" /> RUSSIAN</a></li>
+						<li><a tabindex="-1" href="#"><img class="flag-lang" src="assets/images/flags/it.png" width="16" height="11" alt="lang" /> ITALIAN</a></li>
+					</ul>
+				</li>
+
+			</ul>
+
+		</div>
+	</div>
+	<!-- /Top Bar -->
+
+	<section class="dark">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="text-center">
+					<h3>	Welcome to the United Nations Individual Consultants Management System</h3>
+				</div>
+				<div class="col-lg-12">
+					<p>		As the United Nations’ development network, UNDP connects countries to global knowledge, experience and resources and assists them in strengthening capacity to create their own solutions to development challenges. Visit <a href="http://open.undp.org">open.undp.org</a> to view detailed information on the UNDP’s 6,000+ development projects in 177 countries and territories worldwide.</p>
+					<p>		UNICMS is an online database driven website that will capture detailed information relating to individual consultants who wish to interact with United Nations agencies in a professional capacity. This website will allow consultants to create, modify and manage their business profiles, as well as allow them to apply for contracts/projects being offered by UN agencies. Consultants will have access to their detailed profile, and may see general public information on all other Consultants.</p>
+
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+
+
+	<!-- GOOTER -->
+	<footer id="footer" class="footer-fixed opacity-9">
+		<div class="container nomargin-bottom nopadding clearfix size-12">
+
+			<!-- Social Icons -->
+			<div class="clearfix pull-left mobile-block text-center">
+
+				<a href="#" class="social-icon social-icon-sm social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
+					<i class="icon-facebook"></i>
+					<i class="icon-facebook"></i>
+				</a>
+
+				<a href="#" class="social-icon social-icon-sm social-icon-border social-twitter pull-left" data-toggle="tooltip" data-placement="top" title="Twitter">
+					<i class="icon-twitter"></i>
+					<i class="icon-twitter"></i>
+				</a>
+
+				<a href="#" class="social-icon social-icon-sm social-icon-border social-gplus pull-left" data-toggle="tooltip" data-placement="top" title="Google plus">
+					<i class="icon-gplus"></i>
+					<i class="icon-gplus"></i>
+				</a>
+
+				<a href="#" class="social-icon social-icon-sm social-icon-border social-linkedin pull-left" data-toggle="tooltip" data-placement="top" title="Linkedin">
+					<i class="icon-linkedin"></i>
+					<i class="icon-linkedin"></i>
+				</a>
+
+						<span class="pull-left footer-links hidden-xs">
+
+							<a href="#">Doing business with UN</a>
+							<a href="#">e-Tendering</a>
+							<a href="#">UNDP in Jamaica</a>
+						</span>
+			</div>
+			<!-- /Social Icons -->
+
+
+					<span class="hidden-xs size-13 line-height-30 pull-right">
+						&copy; 2015 UNDP in Jamaica. All Rights Reserved.
+					</span>
+
+
+		</div>
+	</footer>
+	<!-- /GOOTER -->
+
+
+
+
+
+
+
+</div>
+<!-- /wrapper -->
+
+
+
+
+
+
+<!-- SCROLL TO TOP -->
+<a href="#" id="toTop"></a>
+
+
+<!-- PRELOADER -->
+<div id="preloader">
+	<div class="inner">
+		<span class="loader"></span>
+	</div>
+</div><!-- /PRELOADER -->
+
+
+<!-- JAVASCRIPT FILES -->
+<script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
+<script type="text/javascript" src="assets/plugins/jquery/jquery-2.2.3.min.js"></script>
+
+<script type="text/javascript" src="assets/js/scripts.js"></script>
+
+<!-- STYLESWITCHER - REMOVE -->
+<script async="async" src="assets/plugins/styleswitcher/styleswitcher.js"></script>
+
+<!-- PAGE LEVEL SCRIPTS -->
+<script type="text/javascript" src="assets/js/view/demo.shop.js"></script>
+
+<!-- SWIPER SLIDER -->
+<script type="text/javascript" src="assets/plugins/slider.swiper/dist/js/swiper.min.js"></script>
+<script type="text/javascript" src="assets/js/view/demo.swiper_slider.js"></script>
+
 </body>
 </html>
