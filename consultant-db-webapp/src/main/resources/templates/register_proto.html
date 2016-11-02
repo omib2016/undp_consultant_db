@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Bootstrap Multi Step Registration Form Template</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500"/>
+	<link rel="stylesheet" href="form/bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="form/font-awesome/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="form/css/form-elements.css"/>
+	<link rel="stylesheet" href="form/css/style.css"/>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Favicon and touch icons -->
+	<link rel="shortcut icon" href="form/ico/favicon.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="form/ico/apple-touch-icon-144-precomposed.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="form/ico/apple-touch-icon-114-precomposed.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="form/ico/apple-touch-icon-72-precomposed.png"/>
+	<link rel="apple-touch-icon-precomposed" href="form/ico/apple-touch-icon-57-precomposed.png"/>
+
+</head>
+	<!--
+		AVAILABLE BODY CLASSES:
+		
+		smoothscroll 			= create a browser smooth scroll
+		enable-animation		= enable WOW animations
+
+		bg-grey					= grey background
+		grain-grey				= grey grain background
+		grain-blue				= blue grain background
+		grain-green				= green grain background
+		grain-blue				= blue grain background
+		grain-orange			= orange grain background
+		grain-yellow			= yellow grain background
+		
+		boxed 					= boxed layout
+		pattern1 ... patern11	= pattern background
+		menu-vertical-hide		= hidden, open on click
+		
+		BACKGROUND IMAGE [together with .boxed class]
+		data-background="assets/images/boxed_background/1.jpg"
+	-->
+<body>
+
+
+<!-- Top content -->
+<div class="top-content">
+
+	<div class="inner-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3 form-box">
+
+					<form role="form" action="/saveUser" method="post" class="registration-form">
+
+						<fieldset>
+							<div class="form-top">
+								<div class="form-top-left">
+									<h3>Step 1 / 4</h3>
+									<p>Account Details</p>
+								</div>
+								<div class="form-top-right">
+									<i class="fa fa-user"></i>
+								</div>
+							</div>
+							<div class="form-bottom">
+								<div class="form-group">
+									<label class="sr-only" for="form-username">Username</label>
+									<input type="text" name="form-username" placeholder="Username..." class="form-email form-control" id="form-username"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-password">Password</label>
+									<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-repeat-password">Repeat password</label>
+									<input type="password" name="form-repeat-password" placeholder="Repeat password..."
+										   class="form-repeat-password form-control" id="form-repeat-password"/>
+								</div>
+								<button type="button" class="btn btn-next">Next</button>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<div class="form-top">
+								<div class="form-top-left">
+									<h3>Step 2 / 4</h3>
+									<p>Professional Details</p>
+								</div>
+								<div class="form-top-right">
+									<i class="fa fa-key"></i>
+								</div>
+							</div>
+							<div class="form-bottom">
+								<div class="form-group">
+									<label class="sr-only" for="form-companyname">Company name</label>
+									<input type="text" name="form-companyname" placeholder="companyname"
+										   class="form-companyname form-control" id="form-companyname"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-category">Category</label>
+									<select name="form-category" class="form-control pointer required">
+										<option value="">--- Select Category---</option>
+										<option value="Administrative and Logistics">Administrative and Logistics</option>
+										<option value="Technology">Technology</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-subcategory">Sub-Category</label>
+									<select name="form-category" class="form-control pointer required">
+										<option value="">--- Select Subcategory---</option>
+										<option value="Administrative and Logistics">Administrative and Logistics</option>
+										<option value="Technology">Technology</option>
+									</select>
+								</div>
+
+								<button type="button" class="btn btn-previous">Previous</button>
+								<button type="button" class="btn btn-next">Next</button>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<div class="form-top">
+								<div class="form-top-left">
+									<h3>Step 3 / 4</h3>
+									<p>Personal details</p>
+								</div>
+								<div class="form-top-right">
+									<i class="fa fa-user"></i>
+								</div>
+
+							</div>
+							<div class="form-bottom">
+								<div class="form-group">
+									<label class="sr-only" for="form-title">Title</label>
+									<select name="form-title" class="form-control pointer required">
+										<option value="">Select your title</option>
+										<option value="Mr">Mr</option>
+										<option value="Mrs">Mrs</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-firstname">First name</label>
+									<input type="text" name="form-firstname" placeholder="firstname"
+										   class="form-firstname form-control" id="form-firstname"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-lastname">Last name</label>
+									<input type="text" name="form-lastname" placeholder="lastname"
+										   class="form-lastname form-control" id="form-lastname"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-middlename">Middle name</label>
+									<input type="text" name="form-middlename" placeholder="middlename"
+										   class="form-middlename form-control" id="form-middlename"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-businesstype">Type of business</label>
+									<select name="form-businesstype" class="form-control pointer required">
+										<option value="">Select Business type</option>
+										<option value="Consulting">Consulting</option>
+										<option value="Technology">Technology</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-address">Address</label>
+									<input type="text" name="form-address" placeholder="address"
+										   class="form-address form-control" id="form-address"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-address2">Address 2</label>
+									<input type="text" name="form-address2" placeholder="address2"
+										   class="form-address form-control" id="form-address2"/>
+								</div>
+								<button type="button" class="btn btn-previous">Previous</button>
+								<button type="button" class="btn btn-next">Next</button>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<div class="form-top">
+								<div class="form-top-left">
+									<h3>Step 4 / 4</h3>
+									<p>Contact details</p>
+								</div>
+
+							</div>
+							<div class="form-bottom">
+								<div class="form-group">
+									<label class="sr-only" for="form-email">Email *</label>
+									<input type="text" name="form-email" placeholder="email"
+										   class="form-address form-control" id="form-email"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-mobile-no">Mobile No.</label>
+									<input type="text" name="form-email" placeholder="mobile no"
+										   class="form-address form-control" id="form-mobile-no"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-landline">Landline No.</label>
+									<input type="text" name="form-email" placeholder="landline"
+										   class="form-address form-control" id="form-landline"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-faxnumber">Fax No.</label>
+									<input type="text" name="form-email" placeholder="faxnumber"
+										   class="form-email form-control" id="form-faxnumber"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-city">City</label>
+									<input type="text" name="form-city" placeholder="city"
+										   class="form-city form-control" id="form-city"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-state">State</label>
+									<input type="text" name="form-city" placeholder="state"
+										   class="form-state form-control" id="form-state"/>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="form-state">Country</label>
+									<select name="profession[category]" class="form-control pointer required">
+										<option value="">Select Country</option>
+										<option value="US">US</option>
+										<option value="UK">UK</option>
+									</select>
+								</div>
+								<button type="button" class="btn btn-previous">Previous</button>
+								<button type="button" class="btn">Submit</button>
+							</div>
+						</fieldset>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- Javascript -->
+<script src="form/js/jquery-1.11.1.min.js"></script>
+<script src="form/bootstrap/js/bootstrap.min.js"></script>
+<script src="form/js/jquery.backstretch.min.js"></script>
+<script src="form/js/retina-1.1.0.min.js"></script>
+<script src="form/js/scripts.js"></script>
+
+<!--[if lt IE 10]>
+<script src="form/js/placeholder.js"></script>
+<![endif]-->
+
+</body>
+</html>

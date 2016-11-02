@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
 <head>
 
 	<meta charset="utf-8"/>
@@ -9,27 +10,25 @@
 	<title>Bootstrap Multi Step Registration Form Template</title>
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500"/>
-	<link rel="stylesheet" href="form/bootstrap/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="form/font-awesome/css/font-awesome.min.css"/>
+	<!-- WEB FONTS : use %7C instead of | (pipe) -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+
+	<!-- CORE CSS -->
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+	<link id="css_dark_skin" href="assets/css/layout-dark.css" rel="stylesheet" type="text/css" title="dark" />
+
 	<link rel="stylesheet" href="form/css/form-elements.css"/>
 	<link rel="stylesheet" href="form/css/style.css"/>
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
+	<!-- PAGE LEVEL SCRIPTS -->
+	<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 
-	<!-- Favicon and touch icons -->
-	<link rel="shortcut icon" href="form/ico/favicon.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="form/ico/apple-touch-icon-144-precomposed.png"/>
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="form/ico/apple-touch-icon-114-precomposed.png"/>
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="form/ico/apple-touch-icon-72-precomposed.png"/>
-	<link rel="apple-touch-icon-precomposed" href="form/ico/apple-touch-icon-57-precomposed.png"/>
+
 
 </head>
+
 	<!--
 		AVAILABLE BODY CLASSES:
 		
@@ -51,244 +50,345 @@
 		BACKGROUND IMAGE [together with .boxed class]
 		data-background="assets/images/boxed_background/1.jpg"
 	-->
-<body>
+	<body class="smoothscroll boxed pattern10">
+
+		<!-- SLIDE TOP -->
+		<div id="slidetop">
+
+			<div class="container">
+				
+				<div class="row">
+
+					<div class="col-md-4">
+						<h6><i class="icon-heart"></i> WHY SMARTY?</h6>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. </p>
+					</div>
+
+					<div class="col-md-4">
+						<h6><i class="icon-attachment"></i> RECENTLY VISITED</h6>
+						<ul class="list-unstyled">
+							<li><a href="#"><i class="fa fa-angle-right"></i> Consectetur adipiscing elit amet</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> This is a very long text, very very very very very very very very very very very very </a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Dolor sit amet,consectetur adipiscing elit amet</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Consectetur adipiscing elit amet,consectetur adipiscing elit</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-4">
+						<h6><i class="icon-envelope"></i> CONTACT INFO</h6>
+						<ul class="list-unstyled">
+							<li><b>Address:</b> PO Box 21132, Here Weare St, <br /> Melbourne, Vivas 2355 Australia</li>
+							<li><b>Phone:</b> 1-800-565-2390</li>
+							<li><b>Email:</b> <a href="mailto:support@yourname.com">support@yourname.com</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
+			<a class="slidetop-toggle" href="#"><!-- toggle button --></a>
+
+		</div>
+		<!-- /SLIDE TOP -->
 
 
-<!-- Top content -->
-<div class="top-content">
+		<!-- wrapper -->
+		<div id="wrapper">
 
-	<div class="inner-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-sm-offset-3 form-box">
+			<!-- Top Bar -->
+			<div id="topBar">
+				<div class="container">
 
-					<form role="form" action="" method="post" class="registration-form">
+					<!-- right -->
+					<ul class="top-links list-inline pull-right">
+						<li><a href="/login">LOGIN</a></li>
+						<li><a href="/register">REGISTER</a></li>
+					</ul>
 
-						<fieldset>
-							<div class="form-top">
-								<div class="form-top-left">
-									<h3>Step 1 / 4</h3>
-									<p>Account Details</p>
-								</div>
-								<div class="form-top-right">
-									<i class="fa fa-user"></i>
-								</div>
-							</div>
-							<div class="form-bottom">
-								<div class="form-group">
-									<label class="sr-only" for="form-username">Username</label>
-									<input type="text" name="form-username" placeholder="Username..." class="form-email form-control" id="form-username"/>
-								</div>
-								<div class="form-group">
-									<label class="sr-only" for="form-password">Password</label>
-									<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password"/>
-								</div>
-								<div class="form-group">
-									<label class="sr-only" for="form-repeat-password">Repeat password</label>
-									<input type="password" name="form-repeat-password" placeholder="Repeat password..."
-										   class="form-repeat-password form-control" id="form-repeat-password"/>
-								</div>
-								<button type="button" class="btn btn-next">Next</button>
-							</div>
-						</fieldset>
-
-						<fieldset>
-							<div class="form-top">
-								<div class="form-top-left">
-									<h3>Step 2 / 4</h3>
-									<p>Professional Details</p>
-								</div>
-								<div class="form-top-right">
-									<i class="fa fa-key"></i>
-								</div>
-							</div>
-							<div class="form-bottom">
-								<div class="form-group">
-									<label class="sr-only" for="form-companyname">Company name</label>
-									<input type="text" name="form-companyname" placeholder="companyname"
-										   class="form-companyname form-control" id="form-companyname"/>
-								</div>
-								<div class="form-group">
-									<label class="sr-only" for="form-category">Category</label>
-									<select name="form-category" class="form-control pointer required">
-										<option value="">--- Select Category---</option>
-										<option value="Administrative and Logistics">Administrative and Logistics</option>
-										<option value="Technology">Technology</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label class="sr-only" for="form-subcategory">Sub-Category</label>
-									<select name="form-category" class="form-control pointer required">
-										<option value="">--- Select Subcategory---</option>
-										<option value="Administrative and Logistics">Administrative and Logistics</option>
-										<option value="Technology">Technology</option>
-									</select>
-								</div>
-
-								<button type="button" class="btn btn-previous">Previous</button>
-								<button type="button" class="btn btn-next">Next</button>
-							</div>
-						</fieldset>
-
-						<fieldset>
-							<div class="form-top">
-								<div class="form-top-left">
-									<h3>Step 3 / 4</h3>
-									<p>Personal details</p>
-								</div>
-
-							</div>
-							<div class="form-bottom">
-								<div class="form-group">
-									<label class="sr-only" for="form-title">Title</label>
-									<select name="form-title" class="form-control pointer required">
-										<option value="">Select your title</option>
-										<option value="Mr">Mr</option>
-										<option value="Mrs">Mrs</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label class="sr-only" for="form-firstname">First Name</label>
-									<label class="input margin-bottom-10">
-										<i class="ico-append fa fa-user"></i>
-										<input required="" type="text"/>
-										<b class="tooltip tooltip-bottom-right">Your First Name</b>
-									</label>
-								</div>
-								<div class="form-group">
-									<label for="form-lastname">Last Name *</label>
-									<label class="input margin-bottom-10">
-										<i class="ico-append fa fa-user"></i>
-										<input required="" type="text"/>
-										<b class="tooltip tooltip-bottom-right">Your Last Name</b>
-									</label>
-								</div>
-								<div class="form-group">
-									<label for="form-middle_name">Middle Name *</label>
-									<label class="input margin-bottom-10">
-										<i class="ico-append fa fa-user"></i>
-										<input required="" type="text"/>
-										<b class="tooltip tooltip-bottom-right">Your Last Name</b>
-									</label>
-								</div>
-								<div class="form-group">
-									<label>Type of Business *</label>
-									<select name="profession[category]" class="form-control pointer required">
-										<option value="">Select Business type</option>
-										<option value="Consulting">Consulting</option>
-										<option value="Technology">Technology</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label for="form-address">Address</label>
-									<label class="input margin-bottom-10">
-										<i class="ico-append fa fa-user"></i>
-										<input required="" type="text"/>
-										<b class="tooltip tooltip-bottom-right">Your company address</b>
-									</label>
-								</div>
-								<div class="form-group">
-									<label for="form-address2">Address 2</label>
-									<label class="input margin-bottom-10">
-										<i class="ico-append fa fa-user"></i>
-										<input required="" type="text"/>
-										<b class="tooltip tooltip-bottom-right">Your alternative address</b>
-									</label>
-								</div>
-								<button type="button" class="btn btn-previous">Previous</button>
-								<button type="button" class="btn btn-next">Next</button>
-							</div>
-						</fieldset>
-
-						<fieldset>
-							<div class="form-top">
-								<div class="form-top-left">
-									<h3>Step 4 / 4</h3>
-									<p>Contact details</p>
-								</div>
-
-							</div>
-							<div class="form-bottom">
-								<div class="form-group">
-									<label for="form-email">Email *</label>
-									<label class="input margin-bottom-10">
-										<i class="ico-append fa fa-user"></i>
-										<input required="" type="text"/>
-										<b class="tooltip tooltip-bottom-right">Your email address</b>
-									</label>
-								</div>
-								<div class="form-group">
-									<label for="form-mobile-no">Mobile No.</label>
-									<label class="input margin-bottom-10">
-										<i class="ico-append fa fa-user"></i>
-										<input required="" type="text"/>
-										<b class="tooltip tooltip-bottom-right">Your Mobile Number</b>
-									</label>
-								</div>
-								<div class="form-group">
-									<label for="form-landline">Landline No.</label>
-									<label class="input margin-bottom-10">
-										<i class="ico-append fa fa-user"></i>
-										<input required="" type="text"/>
-										<b class="tooltip tooltip-bottom-right">Your Landline</b>
-									</label>
-								</div>
-								<div class="form-group">
-									<label for="form-faxno">Fax no.</label>
-									<label class="input margin-bottom-10">
-										<i class="ico-append fa fa-user"></i>
-										<input required="" type="text"/>
-										<b class="tooltip tooltip-bottom-right">Your Fax No.</b>
-									</label>
-								</div>
-								<div class="form-group">
-									<label for="form-city">City</label>
-									<label class="input margin-bottom-10">
-										<i class="ico-append fa fa-user"></i>
-										<input required="" type="text"/>
-										<b class="tooltip tooltip-bottom-right">Your city.</b>
-									</label>
-								</div>
-								<div class="form-group">
-									<label for="form-state">State</label>
-									<label class="input margin-bottom-10">
-										<i class="ico-append fa fa-user"></i>
-										<input required="" type="text"/>
-										<b class="tooltip tooltip-bottom-right">Your state</b>
-									</label>
-								</div>
-								<div class="form-group">
-									<label>Country</label>
-									<select name="profession[category]" class="form-control pointer required">
-										<option value="">Select Country</option>
-										<option value="US">US</option>
-										<option value="UK">UK</option>
-									</select>
-								</div>
-								<button type="button" class="btn btn-previous">Previous</button>
-								<button type="button" class="btn">Submit</button>
-							</div>
-						</fieldset>
-					</form>
+					<!-- left -->
+					<ul class="top-links list-inline">
+						<li><a href="/">UNICMS</a></li>
+						<li>
+							<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><img class="flag-lang" src="assets/images/flags/us.png" width="16" height="11" alt="lang" /> ENGLISH</a>
+							<ul class="dropdown-langs dropdown-menu">
+								<li><a tabindex="-1" href="#"><img class="flag-lang" src="assets/images/flags/us.png" width="16" height="11" alt="lang" /> ENGLISH</a></li>
+								<li class="divider"></li>
+								<li><a tabindex="-1" href="#"><img class="flag-lang" src="assets/images/flags/de.png" width="16" height="11" alt="lang" /> GERMAN</a></li>
+								<li><a tabindex="-1" href="#"><img class="flag-lang" src="assets/images/flags/ru.png" width="16" height="11" alt="lang" /> RUSSIAN</a></li>
+								<li><a tabindex="-1" href="#"><img class="flag-lang" src="assets/images/flags/it.png" width="16" height="11" alt="lang" /> ITALIAN</a></li>
+							</ul>
+						</li>
+					</ul>
 
 				</div>
 			</div>
+			<!-- /Top Bar -->
+
+
+
+
+
+
+			<!-- 
+				PAGE HEADER 
+				
+				CLASSES:
+					.page-header-xs	= 20px margins
+					.page-header-md	= 50px margins
+					.page-header-lg	= 80px margins
+					.page-header-xlg= 130px margins
+					.dark			= dark page header
+
+					.shadow-before-1 	= shadow 1 header top
+					.shadow-after-1 	= shadow 1 header bottom
+					.shadow-before-2 	= shadow 2 header top
+					.shadow-after-2 	= shadow 2 header bottom
+					.shadow-before-3 	= shadow 3 header top
+					.shadow-after-3 	= shadow 3 header bottom
+			-->
+			<section class="page-header page-header-xs">
+				<div class="container">
+
+					<h1>LOGIN</h1>
+
+					<!-- breadcrumbs -->
+					<ol class="breadcrumb">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Pages</a></li>
+						<li class="active">Login</li>
+					</ol><!-- /breadcrumbs -->
+
+				</div>
+			</section>
+			<!-- /PAGE HEADER -->
+
+
+			<!-- registration-->
+			<section>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4">
+						<form role="form" action="http://localhost:8080/saveUser" method="post" class="registration-form">
+
+							<fieldset>
+								<div class="form-top">
+									<div class="form-top-left">
+										<h3>Step 1 / 4</h3>
+										<p>Account Details</p>
+									</div>
+								</div>
+								<div class="form-bottom">
+									<div class="form-group">
+										<label class="sr-only" for="form-username">Username</label>
+										<input type="text" name="form-username" placeholder="Username..." class="form-email form-control" id="form-username"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-password">Password</label>
+										<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-repeat-password">Repeat password</label>
+										<input type="password" name="form-repeat-password" placeholder="Repeat password..."
+											   class="form-repeat-password form-control" id="form-repeat-password"/>
+									</div>
+									<button type="button" class="btn btn-next">Next</button>
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<div class="form-top">
+									<div class="form-top-left">
+										<h3>Step 2 / 4</h3>
+										<p>Professional Details</p>
+									</div>
+
+								</div>
+								<div class="form-bottom">
+									<div class="form-group">
+										<label class="sr-only" for="form-companyname">Company name</label>
+										<input type="text" name="form-companyname" placeholder="companyname"
+											   class="form-companyname form-control" id="form-companyname"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-category">Category</label>
+										<select name="form-category" class="form-control pointer required">
+											<option value="">--- Select Category---</option>
+											<option value="Administrative and Logistics">Administrative and Logistics</option>
+											<option value="Technology">Technology</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-subcategory">Sub-Category</label>
+										<select name="form-category" class="form-control pointer required">
+											<option value="">--- Select Subcategory---</option>
+											<option value="Administrative and Logistics">Administrative and Logistics</option>
+											<option value="Technology">Technology</option>
+										</select>
+									</div>
+
+									<button type="button" class="btn btn-previous">Previous</button>
+									<button type="button" class="btn btn-next">Next</button>
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<div class="form-top">
+									<div class="form-top-left">
+										<h3>Step 3 / 4</h3>
+										<p>Personal details</p>
+									</div>
+
+								</div>
+								<div class="form-bottom">
+									<div class="form-group">
+										<label class="sr-only" for="form-title">Title</label>
+										<select name="form-title" class="form-control pointer required">
+											<option value="">Select your title</option>
+											<option value="Mr">Mr</option>
+											<option value="Mrs">Mrs</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-firstname">First name</label>
+										<input type="text" name="form-firstname" placeholder="firstname"
+											   class="form-firstname form-control" id="form-firstname"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-lastname">Last name</label>
+										<input type="text" name="form-lastname" placeholder="lastname"
+											   class="form-lastname form-control" id="form-lastname"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-middlename">Middle name</label>
+										<input type="text" name="form-middlename" placeholder="middlename"
+											   class="form-middlename form-control" id="form-middlename"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-businesstype">Type of business</label>
+										<select name="form-businesstype" class="form-control pointer required">
+											<option value="">Select Business type</option>
+											<option value="Consulting">Consulting</option>
+											<option value="Technology">Technology</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-address">Address</label>
+										<input type="text" name="form-address" placeholder="address"
+											   class="form-address form-control" id="form-address"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-address2">Address 2</label>
+										<input type="text" name="form-address2" placeholder="address2"
+											   class="form-address form-control" id="form-address2"/>
+									</div>
+									<button type="button" class="btn btn-previous">Previous</button>
+									<button type="button" class="btn btn-next">Next</button>
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<div class="form-top">
+									<div class="form-top-left">
+										<h3>Step 4 / 4</h3>
+										<p>Contact details</p>
+									</div>
+
+								</div>
+								<div class="form-bottom">
+									<div class="form-group">
+										<label class="sr-only" for="form-email">Email *</label>
+										<input type="text" name="form-email" placeholder="email"
+											   class="form-address form-control" id="form-email"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-mobile-no">Mobile No.</label>
+										<input type="text" name="form-email" placeholder="mobile no"
+											   class="form-address form-control" id="form-mobile-no"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-landline">Landline No.</label>
+										<input type="text" name="form-email" placeholder="landline"
+											   class="form-address form-control" id="form-landline"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-faxnumber">Fax No.</label>
+										<input type="text" name="form-email" placeholder="faxnumber"
+											   class="form-email form-control" id="form-faxnumber"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-city">City</label>
+										<input type="text" name="form-city" placeholder="city"
+											   class="form-city form-control" id="form-city"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-state">State</label>
+										<input type="text" name="form-city" placeholder="state"
+											   class="form-state form-control" id="form-state"/>
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-state">Country</label>
+										<select name="profession[category]" class="form-control pointer required">
+											<option value="">Select Country</option>
+											<option value="US">US</option>
+											<option value="UK">UK</option>
+										</select>
+									</div>
+									<button type="button" class="btn btn-previous">Previous</button>
+									<button type="button" class="btn">Submit</button>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</section>
+			<!-- registration-->
+
+
+
+
+
+
+			<!-- FOOTER -->
+			<footer id="footer">
+
+				<div class="copyright">
+					<div class="container">
+						<ul class="pull-right nomargin list-inline mobile-block">
+							<li><a href="#">Terms &amp; Conditions</a></li>
+							<li>&bull;</li>
+							<li><a href="#">Privacy</a></li>
+						</ul>
+						&copy; All Rights Reserved, Company LTD
+					</div>
+				</div>
+			</footer>
+			<!-- /FOOTER -->
+
 		</div>
-	</div>
-
-</div>
+		<!-- /wrapper -->
 
 
-<!-- Javascript -->
-<script src="form/js/jquery-1.11.1.min.js"></script>
-<script src="form/bootstrap/js/bootstrap.min.js"></script>
-<script src="form/js/jquery.backstretch.min.js"></script>
-<script src="form/js/retina-1.1.0.min.js"></script>
-<script src="form/js/scripts.js"></script>
+		<!-- SCROLL TO TOP -->
+		<a href="#" id="toTop"></a>
 
-<!--[if lt IE 10]>
-<script src="form/js/placeholder.js"></script>
-<![endif]-->
 
-</body>
+
+
+
+		<!-- JAVASCRIPT FILES -->
+
+
+		<!-- Javascript -->
+		<script src="form/js/jquery-1.11.1.min.js"></script>
+		<script src="form/bootstrap/js/bootstrap.min.js"></script>
+		<script src="form/js/jquery.backstretch.min.js"></script>
+		<script src="form/js/retina-1.1.0.min.js"></script>
+		<script src="form/js/scripts.js"></script>
+
+		<!--[if lt IE 10]>
+		<script src="form/js/placeholder.js"></script>
+		<![endif]-->
+
+	</body>
 </html>
