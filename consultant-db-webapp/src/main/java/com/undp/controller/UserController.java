@@ -36,11 +36,11 @@ public class UserController
     }
 
     @PostMapping("/saveUser")
-    public ResponseEntity<Boolean> saveUser(@ModelAttribute UserEntry userEntry)
+    public String saveUser(@ModelAttribute UserEntry userEntry)
     {
         System.out.println(userEntry);
         boolean response = userService.saveUser(userEntry);
-        return new ResponseEntity<Boolean>(response, HttpStatus.OK);
+        return "saveuser";
     }
 
 //    @PostMapping("/saveUser")
