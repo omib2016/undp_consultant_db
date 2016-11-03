@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService
     @Transactional
     public boolean saveUser(UserEntry userEntry)
     {
-        UserLogon userLogon = new UserLogon(userEntry.getUserName(),userEntry.getPassword());
+        UserLogon userLogon = new UserLogon(userEntry.getUsername(),userEntry.getPassword());
         userLogonRepository.save(userLogon);
         userPersonalDetailRepository.save(new UserPersonalDetails(userLogon.getUserId(),userEntry.getFirstName(),
                 userEntry.getMiddleName(),userEntry.getLastName(),userEntry.getBusinessType(),userEntry.getAddressLine1(),

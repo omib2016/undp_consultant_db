@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
-<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+	<html xmlns:th="http://www.thymeleaf.org">
 <head>
 
 	<meta charset="utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<title>Bootstrap Multi Step Registration Form Template</title>
 
@@ -169,7 +167,7 @@
 			<section>
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4">
-						<form role="form" action="http://localhost:8080/saveUser" method="post" class="registration-form">
+						<form role="form" action="#" th:action="@{/saveUser}" th:object="${userentry}" method="post" class="registration-form" >
 
 							<fieldset>
 								<div class="form-top">
@@ -181,15 +179,15 @@
 								<div class="form-bottom">
 									<div class="form-group">
 										<label class="sr-only" for="form-username">Username</label>
-										<input type="text" name="form-username" placeholder="Username..." class="form-email form-control" id="form-username"/>
+										<input type="text" th:field="*{username}" name="username" placeholder="Username..." class="form-email form-control" id="form-username"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-password">Password</label>
-										<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password"/>
+										<input type="password" th:field= "*{password}" name="password" placeholder="Password..." class="form-password form-control" id="form-password"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-repeat-password">Repeat password</label>
-										<input type="password" name="form-repeat-password" placeholder="Repeat password..."
+										<input type="password" name="repeat-password" placeholder="Repeat password..."
 											   class="form-repeat-password form-control" id="form-repeat-password"/>
 									</div>
 									<button type="button" class="btn btn-next">Next</button>
@@ -207,22 +205,22 @@
 								<div class="form-bottom">
 									<div class="form-group">
 										<label class="sr-only" for="form-companyname">Company name</label>
-										<input type="text" name="form-companyname" placeholder="companyname"
+										<input type="text" name="companyName" placeholder="companyname"
 											   class="form-companyname form-control" id="form-companyname"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-category">Category</label>
-										<select name="form-category" class="form-control pointer required">
+										<select name="category" class="form-control pointer required">
 											<option value="">--- Select Category---</option>
-											<option value="Administrative and Logistics">Administrative and Logistics</option>
+											<option value="Administrative">Administrative</option>
 											<option value="Technology">Technology</option>
 										</select>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-subcategory">Sub-Category</label>
-										<select name="form-category" class="form-control pointer required">
+										<select name="subCategory" class="form-control pointer required">
 											<option value="">--- Select Subcategory---</option>
-											<option value="Administrative and Logistics">Administrative and Logistics</option>
+											<option value="Logistics">Logistics</option>
 											<option value="Technology">Technology</option>
 										</select>
 									</div>
@@ -243,7 +241,7 @@
 								<div class="form-bottom">
 									<div class="form-group">
 										<label class="sr-only" for="form-title">Title</label>
-										<select name="form-title" class="form-control pointer required">
+										<select name="title" class="form-control pointer required">
 											<option value="">Select your title</option>
 											<option value="Mr">Mr</option>
 											<option value="Mrs">Mrs</option>
@@ -251,22 +249,22 @@
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-firstname">First name</label>
-										<input type="text" name="form-firstname" placeholder="firstname"
+										<input type="text" name="firstName" placeholder="firstname"
 											   class="form-firstname form-control" id="form-firstname"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-lastname">Last name</label>
-										<input type="text" name="form-lastname" placeholder="lastname"
+										<input type="text" name="lastName" placeholder="lastname"
 											   class="form-lastname form-control" id="form-lastname"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-middlename">Middle name</label>
-										<input type="text" name="form-middlename" placeholder="middlename"
+										<input type="text" name="middleName" placeholder="middlename"
 											   class="form-middlename form-control" id="form-middlename"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-businesstype">Type of business</label>
-										<select name="form-businesstype" class="form-control pointer required">
+										<select name="businessType" class="form-control pointer required">
 											<option value="">Select Business type</option>
 											<option value="Consulting">Consulting</option>
 											<option value="Technology">Technology</option>
@@ -274,12 +272,12 @@
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-address">Address</label>
-										<input type="text" name="form-address" placeholder="address"
+										<input type="text" name="addressLine1" placeholder="address"
 											   class="form-address form-control" id="form-address"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-address2">Address 2</label>
-										<input type="text" name="form-address2" placeholder="address2"
+										<input type="text" name="addressLine2" placeholder="address2"
 											   class="form-address form-control" id="form-address2"/>
 									</div>
 									<button type="button" class="btn btn-previous">Previous</button>
@@ -298,44 +296,44 @@
 								<div class="form-bottom">
 									<div class="form-group">
 										<label class="sr-only" for="form-email">Email *</label>
-										<input type="text" name="form-email" placeholder="email"
+										<input type="text" name="emailId" placeholder="email"
 											   class="form-address form-control" id="form-email"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-mobile-no">Mobile No.</label>
-										<input type="text" name="form-email" placeholder="mobile no"
+										<input type="text" name="mobileNumber" placeholder="mobile no"
 											   class="form-address form-control" id="form-mobile-no"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-landline">Landline No.</label>
-										<input type="text" name="form-email" placeholder="landline"
+										<input type="text" name="landlineNumber" placeholder="landline"
 											   class="form-address form-control" id="form-landline"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-faxnumber">Fax No.</label>
-										<input type="text" name="form-email" placeholder="faxnumber"
+										<input type="text" name="faxNumber" placeholder="faxnumber"
 											   class="form-email form-control" id="form-faxnumber"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-city">City</label>
-										<input type="text" name="form-city" placeholder="city"
+										<input type="text" name="city" placeholder="city"
 											   class="form-city form-control" id="form-city"/>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-state">State</label>
-										<input type="text" name="form-city" placeholder="state"
+										<input type="text" name="state" placeholder="state"
 											   class="form-state form-control" id="form-state"/>
 									</div>
 									<div class="form-group">
-										<label class="sr-only" for="form-state">Country</label>
-										<select name="profession[category]" class="form-control pointer required">
+										<label class="sr-only" for="form-country">Country</label>
+										<select name="country" class="form-control pointer required">
 											<option value="">Select Country</option>
 											<option value="US">US</option>
 											<option value="UK">UK</option>
 										</select>
 									</div>
 									<button type="button" class="btn btn-previous">Previous</button>
-									<button type="button" class="btn">Submit</button>
+									<button type="submit" class="btn btn-success" value="Send" id="submit">Submit</button>
 								</div>
 							</fieldset>
 						</form>

@@ -5,5 +5,6 @@ package com.undp.entity;
  */
 public enum Category
 {
-    TEST;
+    Administrative,
+    Technology;
 }

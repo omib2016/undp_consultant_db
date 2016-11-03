@@ -5,5 +5,6 @@ package com.undp.entity;
  */
 public enum SubCategory
 {
-    TEST;
+    Logistics,
+    Technology;
 }

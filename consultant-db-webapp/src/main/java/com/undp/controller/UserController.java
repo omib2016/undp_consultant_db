@@ -36,11 +36,19 @@ public class UserController
     }
 
     @PostMapping("/saveUser")
-    public ResponseEntity<Boolean> saveUser(@RequestBody UserEntry userEntry)
+    public ResponseEntity<Boolean> saveUser(@ModelAttribute UserEntry userEntry)
     {
+        System.out.println(userEntry);
         boolean response = userService.saveUser(userEntry);
         return new ResponseEntity<Boolean>(response, HttpStatus.OK);
     }
+
+//    @PostMapping("/saveUser")
+//    public ResponseEntity<Boolean> saveUser(@RequestBody String userEntry)
+//    {
+//        System.out.println(userEntry);
+//        return null;
+//    }
 
     //TODO: Move this function to its own controller.
     @RequestMapping("/")
@@ -55,9 +63,10 @@ public class UserController
         return "login";
     }
 
-    @RequestMapping("/register")
-    public String register()
+    @GetMapping("/register")
+    public String register(Model model)
     {
+        model.addAttribute("userentry",new UserEntry());
         return "register";
     }
 

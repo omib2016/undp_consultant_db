@@ -36,8 +36,8 @@ public class RestControllerTest
         userEntry.buildWithState("NY");
         userEntry.buildWithFaxNumber("212-890-9999");
         userEntry.buildWithUserCountry(UserCountry.US);
-        userEntry.buildWithCategoryName(Category.TEST);
-        userEntry.buildWithSubCategory(SubCategory.TEST);
+        userEntry.buildWithCategoryName(Category.Administrative);
+        userEntry.buildWithSubCategory(SubCategory.Technology);
 
         ResponseEntity<Boolean> responseEntity = restTemplate.postForEntity(url, userEntry.build(), Boolean.class);
         Assert.assertEquals(true,responseEntity.getBody().booleanValue());

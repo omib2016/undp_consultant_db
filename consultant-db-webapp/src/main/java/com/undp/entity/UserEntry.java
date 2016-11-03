@@ -1,7 +1,5 @@
 package com.undp.entity;
 
-import javax.persistence.Column;
-
 /**
  * Class representing the user entry having all sign up information.
  */
@@ -9,7 +7,7 @@ public class UserEntry
 {
 
     //User logon
-    private String userName;
+    private String username;
     private String password;
     //Personal details
     private String firstName;
@@ -31,6 +29,78 @@ public class UserEntry
     private Category category;
     private SubCategory subCategory;
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setBusinessType(BusinessType businessType) {
+        this.businessType = businessType;
+    }
+
+    public void setAddressLine1(String addressLine1) {
+        this.addressLine1 = addressLine1;
+    }
+
+    public void setAddressLine2(String addressLine2) {
+        this.addressLine2 = addressLine2;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public void setLandlineNumber(String landlineNumber) {
+        this.landlineNumber = landlineNumber;
+    }
+
+    public void setFaxNumber(String faxNumber) {
+        this.faxNumber = faxNumber;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public void setCountry(UserCountry country) {
+        this.country = country;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public void setSubCategory(SubCategory subCategory) {
+        this.subCategory = subCategory;
+    }
+
     public UserEntry()
     {
 
@@ -38,7 +108,7 @@ public class UserEntry
 
     private UserEntry(UserEntryBuilder userEntryBuilder)
     {
-        this.userName = userEntryBuilder.userName;
+        this.username = userEntryBuilder.userName;
         this.password = userEntryBuilder.password;
         this.firstName = userEntryBuilder.firstName;
         this.middleName = userEntryBuilder.middleName;
@@ -58,8 +128,8 @@ public class UserEntry
         this.subCategory = userEntryBuilder.subCategory;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {
@@ -270,4 +340,27 @@ public class UserEntry
 
     }
 
+    @Override
+    public String toString() {
+        return "UserEntry{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", businessType=" + businessType +
+                ", addressLine1='" + addressLine1 + '\'' +
+                ", addressLine2='" + addressLine2 + '\'' +
+                ", emailId='" + emailId + '\'' +
+                ", mobileNumber='" + mobileNumber + '\'' +
+                ", landlineNumber='" + landlineNumber + '\'' +
+                ", faxNumber='" + faxNumber + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", country=" + country +
+                ", companyName='" + companyName + '\'' +
+                ", category=" + category +
+                ", subCategory=" + subCategory +
+                '}';
+    }
 }
