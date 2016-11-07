@@ -3,11 +3,8 @@ package com.undp.integration;
 import com.undp.entity.*;
 import junit.framework.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
-
-import static com.undp.entity.UserEntry.*;
 
 /**
  * Created by omib on 22/09/2016.

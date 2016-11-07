@@ -1,5 +1,6 @@
 package com.undp.controller;
 
+import com.undp.entity.LogonEntry;
 import com.undp.entity.User;
 import com.undp.entity.UserEntry;
 import com.undp.jpa.UserLogon;
@@ -43,12 +44,6 @@ public class UserController
         return "saveuser";
     }
 
-//    @PostMapping("/saveUser")
-//    public ResponseEntity<Boolean> saveUser(@RequestBody String userEntry)
-//    {
-//        System.out.println(userEntry);
-//        return null;
-//    }
 
     //TODO: Move this function to its own controller.
     @RequestMapping("/")
@@ -57,9 +52,25 @@ public class UserController
         return "home";
     }
 
-    @RequestMapping("/login")
-    public String login()
+    @RequestMapping("/loginUser")
+    public String loginUser(@ModelAttribute LogonEntry userLogon)
     {
+        if (userLogon.getUsername().equalsIgnoreCase("admin@undp.com") && userLogon.getPassword().equals("password"))
+        {
+            return "adminlogin";
+        }
+        else
+        {
+            return "errorlogin";
+        }
+
+
+    }
+
+    @RequestMapping("/login")
+    public String login(Model model)
+    {
+        model.addAttribute("logonentry",new LogonEntry());
         return "login";
     }
 
