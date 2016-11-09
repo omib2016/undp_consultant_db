@@ -55,16 +55,30 @@ public class UserController
     @RequestMapping("/loginUser")
     public String loginUser(@ModelAttribute LogonEntry userLogon)
     {
-        if (userLogon.getUsername().equalsIgnoreCase("admin@undp.com") && userLogon.getPassword().equals("password"))
+        String username = userLogon.getUsername();
+        String password = userLogon.getPassword();
+        String adminusername = "admin@undp.com";
+        String adminpassword = "password";
+        String consultantuser = "consultant@undp.com";
+        String consultantpassword = "password";
+
+        if (username.equalsIgnoreCase(adminusername) && password.equals(adminpassword))
         {
             return "adminlogin";
         }
-        else
+        else if (username.equalsIgnoreCase(consultantuser) && password.equalsIgnoreCase(consultantpassword))
         {
-            return "errorlogin";
+            return "consultantlogin";
         }
 
+        //TODO: Return error logon.
+        return null;
+    }
 
+    @RequestMapping("/userprofile")
+    public String userProfile()
+    {
+        return "userprofile";
     }
 
     @RequestMapping("/login")
